@@ -12,33 +12,32 @@ import static java.lang.Character.*;
  *
  * @author daniel
  */
-public class OOCaesarCypher {
+public class CaesarCipher {
 
     private String alphabet;
     private String shiftedAlphabet;
     private int mainKey;
     
-    public OOCaesarCypher(int key) {
-        String alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-        String shiftedAlphabet = alphabet.substring(key) + alphabet.substring(0,key);
-        int mainKey = key;
+    public CaesarCipher(int key) {
+        alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        shiftedAlphabet = alphabet.substring(key) + alphabet.substring(0,key);
+        mainKey = key;
     }
     
-    public String encrypt(String input, int key) {
+    public String encrypt(String input) {
         StringBuilder encrypted = new StringBuilder(input);
         
         String uCAlphabet = alphabet;
-        String shiftedUCAlphabet = uCAlphabet.substring(key) + uCAlphabet.substring(0,key);
-        
         String lCAlphabet = alphabet.toLowerCase();
-        String shiftedLCAlphabet = lCAlphabet.substring(key) + lCAlphabet.substring(0,key);
+
+        String shiftedLCAlphabet = shiftedAlphabet.toLowerCase();
         
         for (int i = 0; i < encrypted.length(); i++) {
             char currChar = encrypted.charAt(i);
             if (isUpperCase(currChar)) {
                 int idx = uCAlphabet.indexOf(currChar);
                 if (idx != -1) {
-                    char newChar = shiftedUCAlphabet.charAt(idx);
+                    char newChar = shiftedAlphabet.charAt(idx);
                     encrypted.setCharAt(i, newChar);
                 }
             } else {
@@ -51,5 +50,13 @@ public class OOCaesarCypher {
         }
         
         return encrypted.toString(); 
+    }
+    
+    public String decrypt(String input) {
+        CaesarCipher cc = new CaesarCipher(26 - mainKey);
+        
+        String decrypted = cc.encrypt(input);
+        
+        return decrypted;
     }
 }
