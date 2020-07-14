@@ -1,0 +1,91 @@
+1. Pregunta 1
+All questions in this quiz refer to the complete baby name data that you can download by clicking here. You should ignore the short fake data files for testing in the preceding MiniProject Exercise Guide.
+What is the number of girls' names in the file yob1900.csv?
+
+RESPUESTA: 2225
+
+
+2. Pregunta 2
+What is the number of boys' names in the file yob1905.csv?
+
+RESPUESTA: 1506 - MAL - ¿1421?
+
+
+3. Pregunta 3
+What is the rank of the girl’s name “Emily” in 1960?
+
+RESPUESTA: 251
+
+
+4. Pregunta 4
+What is the rank of the boy’s name “Frank” in 1971?
+
+RESPUESTA: 54
+
+
+5. Pregunta 5
+What is the girl’s name of rank 350 in 1980?
+
+RESPUESTA: Mia
+
+
+6. Pregunta 6
+What is the boy’s name of rank 450 in 1982?
+
+RESPUESTA: Forrest
+
+
+7. Pregunta 7
+Suppose Susan was born in 1972. Based on her name's rank in 1972, what would her name be if she were born in 2014 (that is, what name in 2014 had the same rank that "Susan" had in 1972)?
+
+RESPUESTA: Addison
+
+
+8. Pregunta 8
+Suppose Owen was born in 1974. Based on his name's rank in 1974, what would his name be if he were born in 2014 (that is, what name in 2014 had the same rank that "Owen" had in 1974)?
+
+RESPUESTA: Leonel
+
+
+9. Pregunta 9
+In which year from 1880 to 2014 does the girl’s name "Genevieve" have the highest rank (over all the data files)?
+If there is more than one year with the highest rank, choose the earliest one.
+
+RESPUESTA: 1914
+
+
+10. Pregunta 10
+In which year from 1880 to 2014 does the boy’s name "Mich" have the highest rank (over all the data files)?
+If there is more than one year with the highest rank, choose the earliest one.
+
+RESPUESTA: 1957 - MAL - ¿1960?
+
+
+11. Pregunta 11
+What is the average rank of the girl’s name "Susan" over all the data files?
+Give the answer to two decimal places.
+
+RESPUESTA: 173.51
+
+
+12.Pregunta 12
+What is the average rank of the boy's name "Robert" over all the data files?
+Give the answer to two decimal places.
+
+RESPUESTA: 10.75
+
+
+13. Pregunta 13
+What is the total number of girls born in 1990 with names ranked higher than the girl's name "Emily" in 1990?
+Give the answer without any commas or decimal points.
+
+RESPUESTA: 323200
+
+
+14. Pregunta 14
+What is the total number of boys born in 1990 with names ranked higher than the boy's name "Drew" in 1990?
+Give the answer without any commas or decimal points.
+
+RESPUESTA: 1498074
+
+

@@ -1,0 +1,104 @@
+1. Pregunta 1
+Questions 1–3 refer to the data file exportdata.csv, available in the .zip download here.
+Run your program from the first lesson programming exercise Parsing Export Data on the file exportdata.csv.
+What is the name of the country that is listed as the second country that exports both cotton and flowers?
+
+RESPUESTA:
+Zambia
+
+
+2. Pregunta 2
+Run your program from the first lesson programming exercise Parsing Export Data on the file exportdata.csv.
+How many countries export cocoa?
+Note: You should only enter a one- or two-digit number representing the number of countries, with no other information included.
+
+RESPUESTA:
+17
+
+
+3. Pregunta 3
+Run your program from the first lesson programming exercise Parsing Export Data on the file exportdata.csv.
+What is the name of the third country (on the third line of the output) listed whose exports are valued at one trillion US dollars or more?
+(Hint: Their value in the CSV file should be greater than $999,999,999,999.)
+
+RESPUESTA:
+Germany
+
+
+4. Pregunta 4
+Questions 4–11 refer to weather data in the folder nc_weather, available as a .zip download here.
+Run your program developed in Parsing Weather Data to determine the lowest humidity in the file for June 29th, 2014 (weather-2014-06-29.csv).
+What was the lowest humidity reading on that day?
+Note: You should only enter your two-digit number result, with no other additional information included.
+
+RESPUESTA:
+40
+
+5. Pregunta 5
+Run your program from programming exercise Parsing Weather Data to determine the lowest humidity in the file for July 22nd, 2014 (weather-2014-07-22.csv).
+At what time of day did that humidity occur?
+(Refer to the time from the DateUTC column.)
+
+RESPUESTA:
+20:51:00
+
+
+6. Pregunta 6
+Run your program from programming exercise Parsing Weather Data to determine the lowest humidity reading in the entire year of 2013.
+What was the lowest humidity reading?
+Note: You should only enter your two-digit number result, with no other additional information included.
+
+RESPUESTA MALA:
+31
+
+RESPUESTA POSIBLE:
+16
+
+7. Pregunta 7
+Run your program from programming exercise Parsing Weather Data to determine the lowest humidity reading in 2013.
+At what time of day did that lowest humidity occur?
+(Refer to the time from the DateUTC column.)
+
+RESPUESTA MALA:
+20:51:00
+
+RESPUESTA POSIBLE:
+21:51:00
+
+8. Pregunta 8
+Run your program from programming exercise Parsing Weather Data to determine the average temperature in Fahrenheit on August 10, 2013 (weather-2013-08-10.csv).
+Give your answer with four decimal digits and truncate the rest.
+
+RESPUESTA MALA:
+77.1296
+
+RESPUESTA POSIBLE:
+79.9863
+
+
+9. Pregunta 9
+Run your program from programming exercise Parsing Weather Data to determine the average temperature in Fahrenheit for those temperature readings when the humidity is greater than or equal to 80 on September 2, 2013 (weather-2013-09-02.csv).
+Give your answer with three decimal digits and truncate the rest.
+
+RESPUESTA:
+72.593
+
+10. Pregunta 10
+Run your program from programming exercise Parsing Weather Data to determine which day of the year had the coldest temperature in 2013.
+
+RESPUESTA MALA:
+December 30, 2013
+
+RESPUESTA POSIBLE
+January 23, 2013
+
+11. Pregunta 11
+Run your program from programming exercise Parsing Weather Data on 2013 data.
+What was the coldest temperature recorded in 2013?
+Give your answer with one decimal digit. (For example: 10.0)
+
+RESPUESTA MALA:
+33.1
+
+RESPUESTA POSIBLE:
+19.0

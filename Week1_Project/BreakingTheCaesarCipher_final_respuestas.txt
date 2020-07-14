@@ -1,0 +1,105 @@
+1. Pregunta 1
+Which two of the following check correctly if the last character of the String word is not a letter?
+
+RESPUESTAS:
+if ( ! Character.isLetter(word.charAt(word.length()-1))){      wordlength--;   	   	
+}
+
+if (Character.isLetter(word.charAt(word.length()-1)) == false) {
+    wordlength--;
+}
+
+
+2. Pregunta 2
+Consider the following code which is in a program that counts the words of different lengths from a file, and assume resource is a FileResource to a file of words and counts is an array of integer counters.
+
+RESPUESTA:
+All words that are of length greater than or equal to the size of the counts array are counted in the last counter in the array.
+
+
+3. Pregunta 3
+Which one of the following words (or rather groups of characters with no blanks) might need a special case in the countWordLengths method?
+
+RESPUESTA: ¿?
+$
+
+
+4. Pregunta 4
+Consider the file romeo.txt.
+What is the most common word length (ignoring the punctuation of the first and last character of each group of characters)?
+
+RESPUESTA:
+4
+
+
+5. Pregunta 5
+Consider the file lotsOfWords.txt.
+What is the most common word length (ignoring the punctuation of the first and last character of each group of characters)?
+
+RESPUESTA:
+8
+
+
+6. Pregunta 6
+Consider the following code for the halfOfString method that is given a string named message and a starting position named start, and returns a new string that is formed from every other character starting
+with the given start location.
+
+String answer = "";   	
+// MISSING CODE   	
+return answer;
+
+Which one of the following is the missing code for this method?
+
+RESPUESTA:
+for (int k = start; k< message.length() ; k+= 2) {
+     answer = answer + message.charAt(k);    	
+}
+
+
+7. Pregunta 7
+Suppose we decided to write an eyeball method for the two-key decrypt algorithm.
+Which one of the following obstacles would make using the eyeball method difficult?
+
+RESPUESTA INCORRECTA:
+2704
+
+RESPUESTA CORRECTA:
+
+8. Pregunta 8
+The following phrase was encrypted with the two key encryption method we discussed using the two keys 2 and 20.
+Top ncmy qkff vi vguv vbg ycpx
+What is the decrypted message?
+(Note: You should preserve the spacing in your answer.)
+
+RESPUESTA:
+Run like wild to beat the wind
+
+
+9. Pregunta 9
+The following phrase was encrypted with the two key encryption method discussed in the programming exercise, using two unknown keys.
+Akag tjw Xibhr awoa aoee xakex znxag xwko
+What is the decrypted message?
+(You’ll need to figure out which keys were used to encrypt it.)
+
+RESPUESTA:
+Eren and Emily have evil eerie green ears
+
+
+10. Pregunta 10
+Decrypt the encrypted file mysteryTwoKeysPractice.txt
+This file is encrypted with the two key encryption method we discussed. You will need to decrypt the complete file by figuring out which keys were used to encrypt it.
+What are the first five decrypted words?
+
+RESPUESTA:
+Geometric computing research at Duke
+
+
+11. Pregunta 11
+Decrypt the encrypted file mysteryTwoKeysPractice.txt
+This file is encrypted with the two key encryption method we discussed. You’ll need to decrypt the complete file by figuring out which keys were used to encrypt it.
+What are the two keys (in order) that were used to encrypt it?
+(Note: Enter your answer as firstkey,secondkey with no spaces, for example:
+3,15
+
+RESPUESTA:
+17,4

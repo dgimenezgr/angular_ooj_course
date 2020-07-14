@@ -1,0 +1,71 @@
+1. Pregunta 1
+If cr is a CSVRecord from one of the weather data files, which one of the following is a correct way to add a temperature from the file to an accumulating double variable named total?
+
+RESPUESTA:
+double temp = Double.parseDouble(cr.get(“TemperatureF”));
+total += temp;
+
+
+2. Pregunta 2
+Suppose the name of the file that has the coldest temperature is obtained with this line of code: filenameWithColdestTemp = something.getName();
+
+RESPUESTA:
+something must be of type File
+
+
+3. Pregunta 3
+Questions 3–9 refer to weather data that can be downloaded in a .zip by clicking here.
+Run your program on weather data from May 1, 2014 in the file weather-2014-05-01.csv.
+What was the coldest temperature on this day?
+
+RESPUESTA:
+64.0
+
+
+4. Pregunta 4
+Run your program on the data files for the year 2014.
+What was the coldest temperature in this year?
+
+RESPUESTA:
+7.0
+
+5. Pregunta 5
+Run your program on weather data from April 1, 2014 in the file weather-2014-04-01.csv.
+At what time of day did the lowest humidity occur (from the DateUTC column)?
+
+RESPUESTA:
+18:51:00
+
+
+6. Pregunta 6
+Run your program on weather data from 2014.
+What was the lowest humidity in that year?
+
+RESPUESTA:
+13
+
+
+7. Pregunta 7
+Run your program on weather data from 2014.
+At what time of day did the lowest humidity in that year occur?
+
+RESPUESTA:
+18:51:00
+
+
+8. Pregunta 8
+Run your program on weather data from June 1, 2014 in file weather-2014-06-01.csv.
+What was the average temperature on this day?
+(Give your answer to four decimal places, and truncate the rest. For example, if the average temperature was 989.777874, you would enter 989.7778 as your answer.)
+
+RESPUESTA:
+66.9565
+
+
+9. Pregunta 9
+Run your program on weather data from March 30, 2014 in file weather-2014-03-30.csv.
+What was the average temperature in Fahrenheit for those temperature readings when the humidity is greater than or equal to 80?
+(Give your answer to three decimal places, and truncate the rest. For example, if the average temperature was 989.777874, you would enter 989.777 as your answer.)
+
+RESPUESTA:
+58.775
