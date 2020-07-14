@@ -18,11 +18,11 @@ public class WordLengths {
         for (String s : resource.words()) {
             int wordLength = s.length();
             
-            if (!Character.isLetter(s.charAt(wordLength - 1))) {
+            if ( wordLength - 1 != -1 && !Character.isLetter(s.charAt(wordLength - 1))) {
                 wordLength = wordLength - 1;
             }
 
-            if (!Character.isLetter(s.charAt(wordLength - 1))) {
+            if ( wordLength - 1 != -1 && !Character.isLetter(s.charAt(wordLength - 1))) {
                 wordLength = wordLength - 1;
             }
 
@@ -35,7 +35,7 @@ public class WordLengths {
     }
     
     public static void main(String[] args) {
-        FileResource resource = new FileResource("data/lotsOfWords.txt");
+        FileResource resource = new FileResource();
         
         int[] counts = new int[31];
         

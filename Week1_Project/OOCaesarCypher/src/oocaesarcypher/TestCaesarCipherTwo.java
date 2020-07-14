@@ -83,9 +83,9 @@ public class TestCaesarCipherTwo {
         int key1 = getKey(decrypted1);
         int key2 = getKey(decrypted2);
         
-//        System.out.println("KEY 1: " + key1);
-//        System.out.println("KEY 2: " + key2);
-//        
+        System.out.println("KEY 1: " + key1);
+        System.out.println("KEY 2: " + key2);
+
         CaesarCipherTwo cc = new CaesarCipherTwo(key1, key2);
 
         return cc.decrypt(input);
@@ -97,17 +97,20 @@ public class TestCaesarCipherTwo {
         
         String input = resource.asString();
         
-        int key1 = 17;
+        int key1 = 14;
         
-        int key2 = 3;
+        int key2 = 24;
         
         CaesarCipherTwo cc = new CaesarCipherTwo(key1, key2);
         
         String encrypted = cc.encrypt(input);
         
+        String odecrypted = cc.decrypt(input);
+        
         String decrypted = cc.decrypt(encrypted);
         
         System.out.println("Encrypted string: " + encrypted);
+        System.out.println("Originally decrypted string: " + odecrypted);
         System.out.println("Decrypted string: " + decrypted);
         
         System.out.println("BreakCaesarCipher test: " + breakCaesarCipher(encrypted));

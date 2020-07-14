@@ -65,7 +65,7 @@ public class TestCaesarCipher {
         
         System.out.println("Input: " + input);
 
-        int key = 18;
+        int key = 15;
         
         CaesarCipher cc = new CaesarCipher(key);
         
