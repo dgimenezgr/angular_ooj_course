@@ -88,6 +88,12 @@ Note: Enter your answer as firstkey,secondkey with no spaces, for example:
 RESPUESTA MALA:
 5,2
 
+RESPUESTA MALA:
+5,2
+
+RESPUESTA:
+21,24
+
 
 10. Pregunta 10
 Which of the following is the best choice for adding additional private fields to the CaesarCipherTwo class created in the last lesson to make it easier to call decrypt 
@@ -118,6 +124,9 @@ What is printed when the print method in TestSimple is called?
 RESPUESTA MALA:
 3, blue
 
+RESPUESTA:
+blueblueblue is blue repeated
+
 
 14. Pregunta 14
 Suppose the following line is added as the last line in the print method of the class TestSimple.
@@ -125,4 +134,4 @@ System.out.println(item.mystery(5, "ho"));
 How does this line affect what happens with the code in the print method?
 
 RESPUESTA MALA:
-Additionally prints hohohohoho.
+An error because mystery() is private.
