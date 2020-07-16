@@ -1,0 +1,179 @@
+1. Pregunta 1
+
+Consider the first version of GladLibs we saw in this lesson, which stores label substitutions in ArrayLists. Assume an ArrayList named wordsUsed will 
+keep track of words used as replacements so no replacement word will be used more than once. The code below was used as part of a program by a learner 
+in the method processWord. The learner's program runs but still results in duplicate words sometimes. 
+
+RESPUESTA:
+
+If a word is repeated a second call is made and no more checks.
+
+
+2. Pregunta 2
+
+Consider the first version of GladLibs we saw in this lesson, which you modified so there would not be duplicate words chosen for the story. Assume an 
+instance variable is used to keep track of the total number of word tags that are replaced.
+Which one of the following methods is most likely where that variable is updated? 
+
+RESPUESTA:
+processWord();
+
+
+3. Pregunta 3
+Consider the class WordFrequencies, which you wrote in an assignment, that can determine facts about words in a file.
+How many unique words are in the file errors.txt?
+(You should lowercase all words and include the punctuation as part of a word. Thus, “end.” is different than “end”, but “All” is the same as “all”.)
+
+RESPUESTA:
+3721
+
+
+4. Pregunta 4
+Consider the class WordFrequencies, which you wrote in an assignment, that can determine facts about words in a file.
+Which word occurs the most often in the file errors.txt?
+(You should lowercase all words and include the punctuation as part of a word. Thus, “end.” is different than “end”, but “All” is the same as “all”.)
+
+RESPUESTA:
+of
+
+
+5. Pregunta 5
+Consider the class WordFrequencies, which you wrote in an assignment, that can determine facts about words in a file.
+Find the word that occurs the most often in the file errors.txt.
+(You should lowercase all words and include the punctuation as part of a word. Thus, “end.” is different than “end”, but “All” is the same as “all”.)
+How many times does the most common word occur?
+
+RESPUESTA:
+609
+
+
+6. Pregunta 6
+Consider the class CharactersInPlay, which you wrote in an assignment, that determines who the characters were in one of Shakespeare’s plays and also how many lines they had.
+Of the characters who have fewer than 100 lines in the file errors.txt, which of these characters has the most speaking parts?
+
+RESPUESTA:
+ADRIANA
+
+
+7. Pregunta 7
+Consider the class CharactersInPlay, which you wrote in an assignment, that determines who the characters were in one of Shakespeare’s plays and also how many lines they had.
+Find the name of the character with the third most speaking parts in the file errors.txt. How many speaking parts does this person have?
+
+RESPUESTA:
+79
+
+
+8. Pregunta 8
+Consider the class CharactersInPlay, which you wrote in an assignment, that determines who the characters were in one of Shakespeare’s plays and also how many lines they had.
+How many characters in the file errors.txt have at least 10 speaking parts, but no more than 15 speaking parts?
+
+RESPUESTA:
+3
+
+
+9. Pregunta 9
+Consider the class you wrote to find out how many times each codon occurs in a strand of DNA based on reading frames. The file dnaMystery2 represents a long strand of DNA.
+How many unique codons are there if you use a reading frame that starts at position 1?
+
+RESPUESTA:
+32
+
+
+10. Pregunta 10
+Consider the class you wrote to find out how many times each codon occurs in a strand of DNA based on reading frames. The file dnaMystery2 represents a long strand of DNA.
+What is the number of occurrences of the codon that occurs the most often using a reading frame that starts at position 2?
+
+RESPUESTA:
+12
+
+
+11. Pregunta 11
+Consider the class you wrote to find out how many times each codon occurs in a strand of DNA based on reading frames. The file dnaMystery2 represents a long strand of DNA.
+Using a reading frame that starts at position 0, which of the following codons occur 7 times? (Select all that are correct.)
+
+RESPUESTA:
+CAA, CAG
+
+
+12. Pregunta 12
+Consider the class WordsInFiles, which you wrote in an assignment, that determines which words occur in several files, and for each word, which files they occur in.
+Consider the seven files: caesar.txt, confucius.txt, errors.txt, hamlet.txt, likeit.txt, macbeth.txt, and romeo.txt.
+How many words are there that each occur in all seven files?
+
+RESPUESTA MALA:
+312
+
+
+13. Pregunta 13
+Consider the class WordsInFiles, which you wrote in an assignment, that determines which words occur in several files, and for each word, which files they occur in.
+Consider the seven files: caesar.txt, confucius.txt, errors.txt, hamlet.txt, likeit.txt, macbeth.txt and romeo.txt.
+How many words are there that each occur in four of the seven files?
+
+RESPUESTA MALA:
+903
+
+
+14. Pregunta 14
+Consider the class WordsInFiles, which you wrote in an assignment, that determines which words occur in several files, and for each word, which files they occur in.
+Consider the seven files: caesar.txt, confucius.txt, errors.txt, hamlet.txt, likeit.txt, macbeth.txt and romeo.txt.
+In which file does the word “sea” NOT appear?
+(Consider only the exact lowercase string "sea". "SEA" or "sea." would be different words.)
+
+RESPUESTA:
+likeit.txt
+
+
+15. Pregunta 15
+Consider the class WordsInFiles, which you wrote in an assignment, that determines which words occur in several files, and for each word, which files they occur in.
+Consider the seven files: caesar.txt, confucius.txt, errors.txt, hamlet.txt, likeit.txt, macbeth.txt and romeo.txt.
+In which of the following files does the word “tree” appear? (Choose all that apply.)
+(Consider only the exact lowercase string "tree". "TREE" or "tree." would be different words.)
+
+RESPUESTA:
+confucius.txt, likeit.txt, macbeth.txt, romeo.txt
+
+
+16. Pregunta 16
+Consider the map version of GladLibs where a map is created that maps a category to a list of words in that category.
+In which method are the individual ArrayLists of words for categories created?
+
+RESPUESTA MALA:
+initializeFromSource();
+
+RESPUESTA:
+They are created in the constructor.
+
+17. Pregunta 17
+Consider the map version of GladLibs where a map is created that maps a category to a list of words in that category. 
+In which method are these individual ArrayLists of words placed into the HashMap?
+
+RESPUESTA:
+initializeFromSource();
+
+
+18. Pregunta 18
+Consider the map version of GladLibs and consider the method totalWordsInMap that returns the total number of words in all the ArrayLists in the HashMap myMap.
+Which two of the following code possibilities compute this sum of total number of words in the variable sum?
+
+RESPUESTA:
+
+int sum = 0;
+for (String category : myMap.keySet()) {
+    sum += myMap.get(category).size();
+}
+
+int sum = 0;    	
+for (String category : myMap.keySet()) {
+    ArrayList<String> words = myMap.get(category);
+    sum += words.size();
+}
+
+
+19. Pregunta 19
+Consider the map version of GladLibs and consider the method totalWordsConsidered that returns the total number of words in the ArrayLists of the categories 
+that were used for a particular GladLib. Assume a private variable of type ArrayList<String> and named categoriesUsed is used to store the unique categories 
+found as the GladLib is created.
+In which method would we put a category into this ArrayList?
+
+RESPUESTAS:
+processWord();
