@@ -1,98 +1,80 @@
-
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package gladlibs;
+package gladlibmap;
 
-import edu.duke.*;
-import java.util.*;
+import edu.duke.FileResource;
+import edu.duke.URLResource;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Random;
 
 /**
  *
  * @author daniel
  */
-public class GladLibs {
-	private ArrayList<String> adjectiveList;
-	private ArrayList<String> nounList;
-	private ArrayList<String> colorList;
-	private ArrayList<String> countryList;
-	private ArrayList<String> nameList;
-	private ArrayList<String> animalList;
-	private ArrayList<String> verbList;
-	private ArrayList<String> fruitList;
-	private ArrayList<String> timeList;
+public class GladLibMap {
+
         private ArrayList<String> usedList;
 	
+        private HashMap<String,ArrayList<String>> myMap;
+        
 	private Random myRandom;
+        
+        private ArrayList<String> myUsedLabels;
 	
 	private static String dataSourceURL = "http://dukelearntoprogram.com/course3/data";
 	private static String dataSourceDirectory = "data";
 	
-	public GladLibs(){
+	public GladLibMap(){
+                myMap = new HashMap<String,ArrayList<String>>();
+                myUsedLabels = new ArrayList<String>();
 		initializeFromSource(dataSourceDirectory);
 		myRandom = new Random();
 	}
 	
-	public GladLibs(String source){
+	public GladLibMap(String source){
+                myMap = new HashMap<String,ArrayList<String>>();
+                myUsedLabels = new ArrayList<String>();
 		initializeFromSource(source);
 		myRandom = new Random();
 	}
 	
 	private void initializeFromSource(String source) {
-		adjectiveList= readIt(source+"/adjective.txt");	
-		nounList = readIt(source+"/noun.txt");
-		colorList = readIt(source+"/color.txt");
-		countryList = readIt(source+"/country.txt");
-		nameList = readIt(source+"/name.txt");		
-		animalList = readIt(source+"/animal.txt");
-		verbList = readIt(source+"/verb.txt");
-		fruitList = readIt(source+"/fruit.txt");
-		timeList = readIt(source+"/timeframe.txt");
+                myMap.clear();
+            
+                String[] categories = new String[]{"adjective", "noun", "color", "country", "name", "animal", "verb", "fruit", "timeframe"};
+                
+                for (int k = 0; k < categories.length; k++) {
+                    ArrayList<String> tmp = readIt(source+"/" + categories[k] + ".txt");
+                    String category = categories[k];
+                    myMap.put(category, tmp);
+                }
+                
                 usedList = new ArrayList<String>();
 	}
 	
 	private String randomFrom(ArrayList<String> source){
-		int index = myRandom.nextInt(source.size());
-                System.out.println("ELEMENTOS: " + source);
-                System.out.println("INDEX: " + index);
-                System.out.println("TAMAÑO: " + source.size());
-		return source.get(index);
+            int index = myRandom.nextInt(source.size());
+            return source.get(index);
 	}
 	
 	private String getSubstitute(String label) {
-		if (label.equals("country")) {
-			return randomFrom(countryList);
-		}
-		if (label.equals("color")){
-			return randomFrom(colorList);
-		}
-		if (label.equals("noun")){
-			return randomFrom(nounList);
-		}
-		if (label.equals("name")){
-			return randomFrom(nameList);
-		}
-		if (label.equals("adjective")){
-			return randomFrom(adjectiveList);
-		}
-		if (label.equals("animal")){
-			return randomFrom(animalList);
-		}
-		if (label.equals("verb")){
-			return randomFrom(verbList);
-		}
-		if (label.equals("fruit")){
-			return randomFrom(fruitList);
-		}
-		if (label.equals("timeframe")){
-			return randomFrom(timeList);
-		}
-		if (label.equals("number")){
-			return ""+myRandom.nextInt(50)+5;
-		}
-		return "**UNKNOWN**";
+            ArrayList<String> category = myMap.get(label);
+            
+            if (myUsedLabels.indexOf(label) == -1) {
+                myUsedLabels.add(label);
+            }
+            
+            if (label.equals("number")) {
+                return ""+myRandom.nextInt(50)+5;
+            } else if (!label.equals("number")) {
+                return randomFrom(category);
+            } else {
+                return "**UNKNOWN**";
+            }
 	}
 	
 	private String processWord(String w){
@@ -160,12 +142,43 @@ public class GladLibs {
 		return list;
 	}
 	
+        private void totalWordsInMap() {
+            int totalWordsInMap = 0;
+            for (String key : myMap.keySet()) {
+                totalWordsInMap += myMap.get(key).size();
+            }
+            
+            System.out.println("");
+            System.out.println("There were a total of " + totalWordsInMap + " possible words.");
+        }
+        
+        private int totalWordsConsidered() {
+            int totalWordsConsidered = 0;
+            
+            for (int k = 0; k < myUsedLabels.size(); k++) {
+                String thisLabel = myUsedLabels.get(k);
+
+                if (!thisLabel.equals("number")) {
+                    ArrayList<String> thisCategory = myMap.get(thisLabel);
+                    int thisCategoryWords = thisCategory.size();
+                    totalWordsConsidered += thisCategoryWords;
+                }
+            }
+            
+            return totalWordsConsidered;
+        }
+        
 	public void makeStory(){
             usedList.clear();
+            myUsedLabels.clear();
+            
 	    System.out.println("\n");
             String story = fromTemplate("data/madtemplate.txt");
             printOut(story, 60);
 	    System.out.println("\n");
             System.out.println(usedList.size() + " words were replaced.");
-	}
+            totalWordsInMap();
+            System.out.println(totalWordsConsidered() + " words were considered.");
+        }
+    
 }
