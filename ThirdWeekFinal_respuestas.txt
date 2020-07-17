@@ -1,0 +1,63 @@
+1. Pregunta 1
+Suppose a web log is modified to now have a sixth piece of information, a priority, that can be represented as a String.
+Which one of the following is the least likely change to the LogEntry class to accommodate this new part of a web log?
+
+RESPUESTA MALA:
+A new String field is initialized in the constructor.
+
+RESPUESTA:
+The toString method is modified to include a String parameter.
+
+
+2. Pregunta 2
+Consider the following code for the readFile method of the LogAnalyzer class.
+
+RESPUESTA:
+In readFile, the log entries were not stored in records.
+
+
+3. Pregunta 3
+Consider the following code for the method printAllHigherThanNum with one integer parameter num. This method should print all the logs that have a status code higher than num.
+Which one of the following would be the best choice for suitable code for this method?
+
+RESPUESTA:
+for (LogEntry le : records) {
+    if (le.getStatusCode() > num) {
+        System.out.println(le);
+    }
+}
+
+
+4. Pregunta 4
+Run the method countUniqueIPs on the file weblog2_log.
+How many unique IP addresses are in the file?
+
+RESPUESTA:
+45
+
+
+5.Pregunta 5
+Run the method uniqueIPVisitsOnDay(“Sep 24”) on the file weblog2_log.
+
+What size is the ArrayList that is returned?
+
+RESPUESTA:
+14
+
+
+6.Pregunta 6
+Run the method countUniqueIPsInRange(200,299) on the file weblog2_log.
+
+What number is returned?
+
+RESPUESTA MALA:
+40
+
+
+7.Pregunta 7
+Run the method mostNumberVisitsByIP after a HashMap has been created from the method countVisitsPerIP on the file weblog2_log.
+
+What number is returned?
+
+RESPUESTA:
+63
