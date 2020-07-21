@@ -46,13 +46,15 @@ RESPUESTA:
 
 
 6.Pregunta 6
-Run the method countUniqueIPsInRange(200,299) on the file weblog2_log.
+Run the method countUniqueIPsInRange(400,499) on the file weblog2_log.
 
 What number is returned?
 
 RESPUESTA MALA:
 40
 
+RESPUESTA:
+23
 
 7.Pregunta 7
 Run the method mostNumberVisitsByIP after a HashMap has been created from the method countVisitsPerIP on the file weblog2_log.

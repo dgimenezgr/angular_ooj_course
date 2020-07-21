@@ -103,6 +103,8 @@ How many words are there that each occur in all seven files?
 RESPUESTA MALA:
 312
 
+RESPUESTA NUEVA:
+570
 
 13. Pregunta 13
 Consider the class WordsInFiles, which you wrote in an assignment, that determines which words occur in several files, and for each word, which files they occur in.
@@ -111,6 +113,9 @@ How many words are there that each occur in four of the seven files?
 
 RESPUESTA MALA:
 903
+
+RESPUESTA NUEVA:
+826
 
 
 14. Pregunta 14

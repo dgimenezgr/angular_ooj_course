@@ -7,6 +7,7 @@ package vigenerecipher;
 
 import java.util.*;
 import edu.duke.*;
+import java.io.File;
 
 public class VigenereBreaker {
     public String sliceString(String message, int whichSlice, int totalSlices) {
@@ -50,12 +51,24 @@ public class VigenereBreaker {
     public String breakVigenere() {
         FileResource encrFile = new FileResource();
         String encrypted = encrFile.asString();
-            
-        FileResource dictFile = new FileResource("dictionaries/English");
-        HashSet dictionary = readDictionary(dictFile);
         
-        String decrypted = breakForLanguage(encrypted, dictionary);
+        // Make HashMap of dictionaries
+        HashMap dictionaries = new HashMap<String,HashSet<String>>();
+        DirectoryResource ddr = new DirectoryResource();
+        
+        for (File f : ddr.selectedFiles()) {
+            FileResource thisDFr = new FileResource(f);
+            HashSet<String> dictionary = readDictionary(thisDFr);
+            dictionaries.put(f.getName().toLowerCase(),dictionary);            
+        }
 
+//        FileResource dictFile = new FileResource("dictionaries/English");
+//        HashSet dictionary = readDictionary(dictFile);
+//        
+//        String decrypted = breakForLanguage(encrypted, dictionary);
+
+        String decrypted = breakForAllLangs(encrypted, dictionaries);
+        
         return decrypted;
         
     }
@@ -91,8 +104,10 @@ public class VigenereBreaker {
         int mostRealWords = 0;
         String decrypted = "";
         
+        char thisMostCommonChar = mostCommonCharIn(dictionary);
+        
         for (int k = firstKeyLength; k < lastKeyLength; k++) {
-            int[] thisKey = tryKeyLength(encrypted, k, 'e');
+            int[] thisKey = tryKeyLength(encrypted, k, thisMostCommonChar);
 //            int[] thisKey = tryKeyLength(encrypted, 38, 'e');
             VigenereCipher vc = new VigenereCipher(thisKey);
 
@@ -141,5 +156,22 @@ public class VigenereBreaker {
         }
         
         return mostCommonChar;
+    }
+    
+    public String breakForAllLangs(String encrypted, HashMap<String,HashSet<String>> languages) {
+        String realDecrypted = null;
+        int realWords = 0;
+        
+        for (String lang : languages.keySet()) {
+            HashSet<String> dictionary = languages.get(lang);
+            String decrypted = breakForLanguage(encrypted, dictionary);
+            int currRealWords = countWords(encrypted, dictionary);
+            if (currRealWords > realWords) {
+                realWords = currRealWords;
+                realDecrypted = decrypted;
+            }
+        }
+                
+        return realDecrypted;
     }
 }

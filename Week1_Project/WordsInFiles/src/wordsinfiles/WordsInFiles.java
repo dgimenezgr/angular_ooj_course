@@ -30,17 +30,21 @@ public class WordsInFiles {
         String fileName = f.getName();
         
         for (String word : fr.words()) {
-            
             if (!wordsToFiles.containsKey(word)) {
                 ArrayList<String> list = new ArrayList<String>();
                 list.add(fileName);
                 wordsToFiles.put(word, list);
             } else {
                 ArrayList<String> curr = wordsToFiles.get(word);
-                curr.add(fileName);
-                wordsToFiles.put(word, curr);
+                if (!curr.contains(fileName)){
+                    curr.add(fileName);
+                    wordsToFiles.put(word, curr);
+                }
             }
         }
+        
+//        System.out.println(fileName + " is:");
+//        System.out.println(fr.asString());
     }
     
     public void buildWordFileMap() {
@@ -50,7 +54,7 @@ public class WordsInFiles {
         DirectoryResource dr = new DirectoryResource();
         
         for (File f : dr.selectedFiles()) {
-            addWordsFromFile(f);        
+            addWordsFromFile(f);
         }
     }
     

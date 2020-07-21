@@ -186,8 +186,18 @@ public class CipherTester {
         System.out.println("Vigeneres Test Break: ");
         testBreakVigenere();
 
+        // TEST mostCommonCharIn()
+//        VigenereBreaker vb = new VigenereBreaker();
+//        FileResource dfr = new FileResource("dictionaries/Italian");
+//        HashSet<String> dict = vb.readDictionary(dfr);
+//
+//        System.out.println("Most common character in language: " + vb.mostCommonCharIn(dict));
+        
+        
         // TEST readDictionary
 //        System.out.println("Read Dictionary TEST: ");
 //        testReadDictionary();
+
+
     }
 }

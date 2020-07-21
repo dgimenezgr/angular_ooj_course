@@ -13,41 +13,40 @@ import java.util.HashMap;
  * @author daniel
  */
 public class Tester {
+
+    public static void printWholeInfo() {
+        WordsInFiles wif = new WordsInFiles();
+        wif.buildWordFileMap();
+        
+        int maxNumberOfFiles = wif.maxNumber();
+        
+        ArrayList<String> wordsInMaxNumberOfFilesAL = wif.wordsInNumFiles(maxNumberOfFiles);
+        
+        int wordsInMaxNumberOfFilesNo = wordsInMaxNumberOfFilesAL.size();
+        
+        System.out.println("The greatest number of files a word appears in is " + maxNumberOfFiles + ", and there are " + wordsInMaxNumberOfFilesNo + " such words: " + wordsInMaxNumberOfFilesAL.toString());
+
+        for (int k = 0; k < wordsInMaxNumberOfFilesAL.size(); k++) {
+            String thisWord = wordsInMaxNumberOfFilesAL.get(k);
+            System.out.println(thisWord + " appears in the files:");
+            wif.printFilesIn(thisWord);
+            System.out.println("");
+        }
+        
+        ArrayList<String> wordsInFourFiles = wif.wordsInNumFiles(4);
+        
+        int wordsInFourFilesInt = wordsInFourFiles.size();
+        
+        System.out.println("There are " + wordsInFourFilesInt + " words that appear in 4 files.");
+        
+        System.out.println("The files in which tree appears are: ");
+        wif.printFilesIn("tree");
+    }
     
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // buildWordFileMap()
-        WordsInFiles wf = new WordsInFiles();
-        
-        wf.buildWordFileMap();
-        
-        // Determine the maximum number of files any word is in
-//        int maxNumberOfFiles = wf.maxNumber();
-//        // Determine all the words that are in the maximum number of files
-//        ArrayList<String> wordsInMaxFiles = wf.wordsInNumFiles(maxNumberOfFiles);
-//        // For each such word, print the filenames of the files it is in
-//        
-//        System.out.println("The maximum number of files in which a single word appears is " + maxNumberOfFiles);
-//        System.out.println("-----------------------------");
-//        System.out.println("-----------------------------");
-//        System.out.println("The words which appear this number of times are ");
-//        
-//        for (int k = 0; k < wordsInMaxFiles.size(); k++) {
-//            String wordInMaxFiles = wordsInMaxFiles.get(k);
-//            System.out.println("\"" + wordInMaxFiles + "\"" + " in: ");
-//        System.out.println("-----------------------------");
-//            wf.printFilesIn(wordInMaxFiles);
-//        System.out.println("-----------------------------");
-//        System.out.println("");
-//        }
-//        System.out.println("-----------------------------");
-//        System.out.println("-----------------------------");
-//        System.out.println("They appear in the following files: ");
-        
-//        System.out.println(wf.wordsInNumFiles(4).size());
-            wf.printFilesIn("tree");
-        
+        printWholeInfo();
     }
 }
